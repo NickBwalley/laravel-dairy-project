@@ -1,5 +1,5 @@
 @extends('layout.layout')
-@section('page_title','Users - ')
+@section('page_title','Produce - ')
 @section('content')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -8,7 +8,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Users</h1>
+                        <h1 class="m-0">Produce</h1>
                     </div><!-- /.col -->
 
                 </div><!-- /.row -->
@@ -23,7 +23,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <a href="{{URL::to('user/add')}}" class="btn btn-primary mb-2">Add <i class="fa fa-plus"></i> </a>
+                                <a href="{{URL::to('produce/add')}}" class="btn btn-primary mb-2">Add <i class="fa fa-plus"></i> </a>
 
                                 <table class="table table-bordered">
                                     <thead>

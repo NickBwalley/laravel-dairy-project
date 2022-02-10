@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-// use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +14,25 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard');
 });
 
-// users 
-Route::get('users', 'App\Http\Controllers\UserController@all'); // controller@methodToBeCalled
-// Route::get('users', [UserController::class, 'all']);
+Route::get('home', function () {
+    return view('dashboard');
+});
+
+//Role Routes
+Route::get('roles','App\Http\Controllers\RoleController@all');
+Route::get('role/add','App\Http\Controllers\RoleController@add');
+
+//User Routes
+Route::get('users','App\Http\Controllers\UserController@all');
+Route::get('user/add','App\Http\Controllers\UserController@add');
+
+//Cow Routes
+Route::get('cows','App\Http\Controllers\CowController@all');
+Route::get('cow/add','App\Http\Controllers\CowController@add');
+
+//Produce Routes
+Route::get('produce','App\Http\Controllers\ProduceController@all');
+Route::get('produce/add','App\Http\Controllers\ProduceController@add');
