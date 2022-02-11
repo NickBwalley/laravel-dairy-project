@@ -2,12 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cow; 
 use Illuminate\Http\Request;
 
 class CowController extends Controller
 {
     public function all(){
-        return view('cows.all');
+        //get all the cows data. 
+        $cows = Cow::all();
+        // dd($cows); // dump the execution of the data and stop execution. 
+        //show the view. 
+        // passing the data to the view. 
+        return view('cows.all', [
+            'cows' => $cows
+        ]);
     }
 
     public function add(){

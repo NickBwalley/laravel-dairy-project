@@ -29,24 +29,28 @@
                                     <thead>
                                     <tr>
                                         <th style="width: 10px">#</th>
-                                        <th>h1</th>
-                                        <th>h2</th>
-                                        <th>h3</th>
+                                        <th>Name</th>
+                                        <th>Age</th>
+                                        <th>Gender</th>
+                                        <th>Breed</th>                                        
                                         <th style="width: 15px">Actions</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>
-                                                <a href="#"><i class="fa fa-edit"></i> </a>
-                                                <a href="#"><i class="fa fa-trash"></i> </a>
-                                            </td>
-                                        </tr>
-
+                                        @foreach($cows as $cow)
+                                        
+                                            <tr>
+                                                <td>{{$cow->cow_id}}</td>
+                                                <td>{{$cow->name}}</td>
+                                                <td>{{$cow->birth_date}}</td>
+                                                <td>{{$cow->gender}}</td>
+                                                <td>{{$cow->breed}}</td>
+                                                <td>
+                                                    <a href="#"><i class="fa fa-edit"></i> </a>
+                                                    <a href="#"><i class="fa fa-trash"></i> </a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
