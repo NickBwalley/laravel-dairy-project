@@ -30,28 +30,33 @@
                             <!-- form start -->
                             <form>
                                 <div class="card-body">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Name</label>
-                                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                                <div class="form-group">
+                                        <label for="cow_name">Name</label>
+                                        <input type="text" class="form-control" id="cow_name" name="cow_name" placeholder="Enter cow name">
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Select</label>
-                                        <select class="form-control">
-                                            <option>option 1</option>
-                                            <option>option 2</option>
-                                            <option>option 3</option>
-                                            <option>option 4</option>
-                                            <option>option 5</option>
+                                         <label for="birth_date">Birth Date</label>
+                                         <input type="date" class="form-control" name="birth_date" id="birth_date">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="gender">Gender</label>
+                                        <select id="gender" name="gender" class="form-control">
+                                            <option value="F">Cow</option>
+                                            <option value="H">Heifer</option>
+                                            <option value="B">Bull</option>
+                                            <option value="M">Bull</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Email address</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                                        <label for="breed">Breed</label>
+                                        <select id="breed" name="breed" class="form-control">
+                                            <option value="guernsey">Guernsey</option>
+                                            <option value="freshian">Freshian</option>
+                                            <option value="ayrshire">Ayrshire</option>
+                                            <option value="jersey">jersey</option>
+                                        </select>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputPassword1">Password</label>
-                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                    </div>
+                                </div>
                                 </div>
                                 <!-- /.card-body -->
 
