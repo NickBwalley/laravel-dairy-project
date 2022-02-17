@@ -21,4 +21,8 @@ class CowController extends Controller
     public function add(){
         return view('cows.add');
     }
+
+    public function save(Request $request){
+        dd('here');
+    }
 }

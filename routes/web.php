@@ -32,6 +32,12 @@ Route::get('user/add','App\Http\Controllers\UserController@add');
 //Cow Routes
 Route::get('cows','App\Http\Controllers\CowController@all');
 Route::get('cow/add','App\Http\Controllers\CowController@add');
+Route::post('cow/save','App\Http\Controllers\CowController@save');
+Route::post('cow/delete','App\Http\Controllers\CowController@delete');
+
+Route::post('cow/edit','App\Http\Controllers\CowController@edit');
+
+//
 
 //Produce Routes
 Route::get('produce','App\Http\Controllers\ProduceController@all');

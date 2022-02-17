@@ -28,8 +28,9 @@
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            <form>
-                                <div class="card-body">
+                            <form name="add_cow" id = "add_cow" method = "post" action="{{URL:: to('cow/save')}}" >
+                            @csrf    
+                            <div class="card-body">
                                 <div class="form-group">
                                         <label for="cow_name">Name</label>
                                         <input type="text" class="form-control" id="cow_name" name="cow_name" placeholder="Enter cow name">
