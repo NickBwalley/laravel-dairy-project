@@ -31,26 +31,35 @@
                             <form name="add_cow" id = "add_cow" method = "post" action="{{URL:: to('cow/save')}}" >
                             @csrf    
                             <div class="card-body">
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif    
                                 <div class="form-group">
                                         <label for="cow_name">Name</label>
-                                        <input type="text" class="form-control" id="cow_name" name="cow_name" placeholder="Enter cow name">
+                                        <input required type="text" class="form-control" id="cow_name" name="cow_name" placeholder="Enter cow name">
                                     </div>
                                     <div class="form-group">
                                          <label for="birth_date">Birth Date</label>
-                                         <input type="date" class="form-control" name="birth_date" id="birth_date">
+                                         <input required type="date" class="form-control" name="birth_date" id="birth_date">
                                     </div>
                                     <div class="form-group">
                                         <label for="gender">Gender</label>
-                                        <select id="gender" name="gender" class="form-control">
+                                        <select required id="gender" name="gender" class="form-control">
                                             <option value="F">Cow</option>
-                                            <option value="H">Heifer</option>
+                                            <option value="H">Heiferss</option>
                                             <option value="B">Bull</option>
                                             <option value="M">Bull</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="breed">Breed</label>
-                                        <select id="breed" name="breed" class="form-control">
+                                        <select required id="breed" name="breed" class="form-control">
                                             <option value="guernsey">Guernsey</option>
                                             <option value="freshian">Freshian</option>
                                             <option value="ayrshire">Ayrshire</option>

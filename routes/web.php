@@ -37,7 +37,7 @@ Route::post('cow/delete','App\Http\Controllers\CowController@delete');
 
 Route::post('cow/edit','App\Http\Controllers\CowController@edit');
 
-//
+//  
 
 //Produce Routes
 Route::get('produce','App\Http\Controllers\ProduceController@all');

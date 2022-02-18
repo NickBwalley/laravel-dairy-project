@@ -23,6 +23,14 @@ class CowController extends Controller
     }
 
     public function save(Request $request){
+
+        $validated = $request->validate([
+            'cow_name' => 'required|alpha',
+            'birth_date' => 'required|date',
+            'gender' => 'required',
+            'breed' => 'required', 
+        ]);
+
         dd('here');
     }
 }
