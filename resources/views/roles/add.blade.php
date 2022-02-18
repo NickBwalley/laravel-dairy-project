@@ -28,31 +28,29 @@
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            <form>
+                            <form name="add_role" id = "add_role" method = "post" action="{{URL:: to('role/save')}}" >
+                            @csrf    
+                            <div class="card-body">
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif 
+                        
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Name</label>
-                                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                                        <label for="role_name">Name</label>
+                                        <input required type="text" class="form-control" name="role_name" id="role_name" placeholder="Enter Role Name">
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Select</label>
-                                        <select class="form-control">
-                                            <option>option 1</option>
-                                            <option>option 2</option>
-                                            <option>option 3</option>
-                                            <option>option 4</option>
-                                            <option>option 5</option>
-                                        </select>
+                                        <label for="role_desc">Description</label>
+                                        <input required type="text" class="form-control" name="role_desc" id="role_name" placeholder="Enter Description">
                                     </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Email address</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputPassword1">Password</label>
-                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                    </div>
-                                </div>
+                                   
                                 <!-- /.card-body -->
 
                                 <div class="card-footer">
