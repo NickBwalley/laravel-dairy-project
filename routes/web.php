@@ -33,7 +33,7 @@ Route::get('user/add','App\Http\Controllers\UserController@add');
 Route::get('cows','App\Http\Controllers\CowController@all');
 Route::get('cow/add','App\Http\Controllers\CowController@add');
 Route::post('cow/save','App\Http\Controllers\CowController@save');
-Route::get('cow/delete','App\Http\Controllers\CowController@delete');
+Route::get('cow/delete/{id}','App\Http\Controllers\CowController@delete');
 
 Route::post('cow/edit','App\Http\Controllers\CowController@edit');
 
