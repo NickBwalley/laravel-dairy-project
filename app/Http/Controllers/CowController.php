@@ -31,6 +31,19 @@ class CowController extends Controller
             'breed' => 'required', 
         ]);
 
+        //Input are ok
+        //oop manenoz
+        //an object of type cow.
+        $cow = new Cow();
+
+        $cow->name = $request->get('cow_name');
+        $cow->birth_date = $request->get('birth_date');
+        $cow->gender = $request->get('gender');
+        $cow->breed = $request->get('breed');
+        $cow->save();
+
+        return redirect('cows');
+
         dd('here');
     }
 }
