@@ -46,4 +46,11 @@ class CowController extends Controller
 
         dd('here');
     }
+
+    public function delete(){
+        $cows = Cow::whereNotNull('cow_id');
+        $cows->delete();
+
+        return redirect('cows');
+    }
 }

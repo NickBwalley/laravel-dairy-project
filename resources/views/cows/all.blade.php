@@ -47,7 +47,7 @@
                                                 <td>{{$cow->breed}}</td>
                                                 <td>
                                                     <a href="#"><i class="fa fa-edit"></i> </a>
-                                                    <a href="#"><i class="fa fa-trash"></i> </a>
+                                                    <a href="{{URL:: to('cow/delete/'.$cow->cow_id)}}"><i class="fa fa-trash"></i> </a>
                                                 </td>
                                             </tr>
                                         @endforeach
