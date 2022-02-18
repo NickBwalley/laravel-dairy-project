@@ -24,9 +24,9 @@ Route::get('home', function () {
 //Role Routes
 Route::get('roles','App\Http\Controllers\RoleController@all');
 Route::get('role/add','App\Http\Controllers\RoleController@add');
-Route::post('cow/save','App\Http\Controllers\RoleController@save');
-Route::get('cow/delete/{id}','App\Http\Controllers\RoleController@delete');
-Route::post('cow/edit','App\Http\Controllers\RoleController@edit');
+Route::post('role/save','App\Http\Controllers\RoleController@save');
+Route::get('role/delete/{id}','App\Http\Controllers\RoleController@delete');
+Route::post('role/edit','App\Http\Controllers\RoleController@edit');
 
 //User Routes
 Route::get('users','App\Http\Controllers\UserController@all');

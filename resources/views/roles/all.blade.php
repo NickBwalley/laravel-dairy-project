@@ -29,24 +29,25 @@
                                     <thead>
                                     <tr>
                                         <th style="width: 10px">#</th>
-                                        <th>h1</th>
-                                        <th>h2</th>
-                                        <th>h3</th>
+                                        <th>Role Name</th>
+                                        <th>Role Description</th>
+                                        <!-- <th>h3</th> -->
                                         <th style="width: 15px">Actions</th>
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    @foreach($role as $role)
                                         <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td>{{$role->role_id}}</td>
+                                            <td>{{$role->name}}</td>
+                                            <td>{{$role->desc}}</td>
+                                            <!-- <td></td> -->
                                             <td>
                                                 <a href="#"><i class="fa fa-edit"></i> </a>
                                                 <a href="#"><i class="fa fa-trash"></i> </a>
                                             </td>
                                         </tr>
-
+                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>
