@@ -58,3 +58,6 @@ Route::post('produce/edit','App\Http\Controllers\ProduceController@edit');
 // edit query
 Route::get('produce/edit/{id}','App\Http\Controllers\ProduceController@edit');
 Route::post('produce/edit/','App\Http\Controllers\ProduceController@update');
+
+// sms route
+Route::get('sms', 'App\Http\Controllers\CowController@testSMS');

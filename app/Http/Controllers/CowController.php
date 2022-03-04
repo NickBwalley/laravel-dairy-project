@@ -70,9 +70,12 @@ class CowController extends Controller
         return redirect('cows');
     }
 
+    public function textSMS(){
+        $this->sendSMS('0714394332', 'Mata Dairy', 'Bamboochah!');
+    }
     public static function sendSMS($to, $from, $msg){
-        $username = 'YOUR_USERNAME'; // use 'sandbox' for development in the test environment
-        $apiKey   = 'YOUR_API_KEY'; // use your sandbox app API key for development in the test environment
+        $username = env('AT_USERNAME'); // use 'sandbox' for development in the test environment
+        $apiKey   = env('AT_API_KEY'); // use your sandbox app API key for development in the test environment
         $AT       = new AfricasTalking($username, $apiKey);
 
         // Get one of the services
@@ -80,8 +83,8 @@ class CowController extends Controller
 
         // Use the service
         $result   = $sms->send([
-            'to'      => '+2XXYYYOOO',
-            'message' => 'Hello World!'
+            'to'      => $to,
+            'message' => $msg
         ]);
 
         print_r($result);
