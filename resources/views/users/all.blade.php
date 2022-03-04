@@ -29,24 +29,33 @@
                                     <thead>
                                     <tr>
                                         <th style="width: 10px">#</th>
-                                        <th>h1</th>
-                                        <th>h2</th>
-                                        <th>h3</th>
+                                        <th>NationalID</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>birth_date</th>
+                                        <th>RollID</th>
+                                        <th>Password</th>
                                         <th style="width: 15px">Actions</th>
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    @foreach($users as $user)
                                         <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td>{{$user->user_id}}</td>
+                                            <td>{{$user->national_id}}</td>
+                                            <td>{{$user->name}}</td>
+                                            <td>{{$user->email}}</td>
+                                            <td>{{$user->phone}}</td>
+                                            <td>{{$user->birth_date}}</td>
+                                            <td>{{$user->roll_id}}</td>
+                                            <td>{{$user->password}}</td>
                                             <td>
-                                                <a href="#"><i class="fa fa-edit"></i> </a>
-                                                <a href="#"><i class="fa fa-trash"></i> </a>
+                                            <a href="{{URL::to('user/edit/' .$user->user_id)}}"><i class="fa fa-edit"></i> </a>
+                                                <a href="{{URL:: to('user/delete/'.$user->user_id)}}"><i class="fa fa-trash"></i> </a>
                                             </td>
                                         </tr>
-
+                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>

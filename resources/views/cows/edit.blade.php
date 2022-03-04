@@ -1,5 +1,5 @@
 @extends('layout.layout')
-@section('page_title','Produces - ')
+@section('page_title','Cows - ')
 @section('content')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -8,7 +8,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Add Produce</h1>
+                        <h1 class="m-0">Edit Cow</h1>
                     </div><!-- /.col -->
 
                 </div><!-- /.row -->
@@ -28,9 +28,9 @@
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            <form name="add_produce" id = "add_produce" method = "post" action="{{URL:: to('produce/save')}}" >
-                                @csrf
-                                <div class="card-body">
+                            <form name="edit_cow" id = "edit_cow" method = "POST" action="/cow/edit">
+                            @csrf
+                            <div class="card-body">
                                 @if ($errors->any())
                                     <div class="alert alert-danger">
                                         <ul>
@@ -39,21 +39,37 @@
                                             @endforeach
                                         </ul>
                                     </div>
-                                @endif
+                                @endif 
+                        
+                                <div class="card-body">
+                                    <input type="hidden" name="id" value={{$data['cow_id']}}>
                                     <div class="form-group">
-                                        <label for="amount">Amount</label>
-                                        <input required type="text" class="form-control" id="amount" name="amount" placeholder="Enter Amount">
-                                    </div>
-                                    
-                                    <div class="form-group">
-                                        <label for="produce_date">Produce Date</label>
-                                        <input required type="date" class="form-control" id="produce_date" name="produce_date" placeholder="Enter Date">
+                                        <label for="role_name">Name</label>
+                                        <input required type="text" class="form-control" value={{$data['name']}} name="name" id="name" placeholder="Enter Role Name">
                                     </div>
                                     <div class="form-group">
-                                        <label for="user_id">UserId</label>
-                                        <input required type="text" class="form-control" id="user_id" name="user_id" placeholder="Enter UserID">
+                                        <label for="cow_name">Age</label>
+                                        <input required type="date" class="form-control" value={{$data['birth_date']}} name="birth_date" id="birth_date" placeholder="Enter Description">
                                     </div>
-                                </div>
+                                    <div class="form-group">
+                                        <label for="cow_name">Gender</label>
+                                        <select required id="gender" name="gender" class="form-control"> value={{$data['gender']}}
+                                            <option value="F">Cow</option>
+                                            <option value="H">Heiferss</option>
+                                            <option value="B">Bull</option>
+                                            <option value="M">Bull</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="breed">Breed</label>
+                                        <select required id="breed" name="breed" class="form-control"> value={{$data['breed']}}
+                                            <option value="guernsey">Guernsey</option>
+                                            <option value="freshian">Freshian</option>
+                                            <option value="ayrshire">Ayrshire</option>
+                                            <option value="jersey">jersey</option>
+                                        </select>
+                                    </div>
+                                   
                                 <!-- /.card-body -->
 
                                 <div class="card-footer">

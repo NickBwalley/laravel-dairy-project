@@ -25,11 +25,17 @@ class RoleController extends Controller
         return view('roles.add');
     }
 
+    public function edit($id){
+
+        $data = Role::find($id);
+        return view('roles.edit', ['data'=>$data]);
+    }
+
     public function save(Request $request) {
 
         $validated = $request->validate([
-            'role_name' => 'required|alpha',
-            'role_desc' => 'required|alpha',
+            'role_name' => 'required|string',
+            'role_desc' => 'required|string',
         ]);
 
         $role = new Role();
@@ -38,6 +44,20 @@ class RoleController extends Controller
         $role->desc = $request->get('role_desc');
         $role->save();
 
+        return redirect('roles');
+    }
+
+    public function update(Request $request){
+        $data = Role::find($request->id);
+        $data->name = $request->role_name;
+        $data->desc = $request->role_desc;
+        $data->save();
+        
+        return redirect('roles');
+    }
+
+    public function delete($id){
+        Role::find($id)->delete();
         return redirect('roles');
     }
 

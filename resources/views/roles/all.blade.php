@@ -43,8 +43,8 @@
                                             <td>{{$role->desc}}</td>
                                             <!-- <td></td> -->
                                             <td>
-                                                <a href="#"><i class="fa fa-edit"></i> </a>
-                                                <a href="#"><i class="fa fa-trash"></i> </a>
+                                                <a href="{{URL::to('role/edit/' .$role->role_id)}}"><i class="fa fa-edit"></i> </a>
+                                                <a href="{{URL:: to('role/delete/'.$role->role_id)}}"><i class="fa fa-trash"></i> </a>
                                             </td>
                                         </tr>
                                     @endforeach

@@ -37,7 +37,7 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach($cows as $cow)
+                                        @foreach($cow as $cow)
                                         
                                             <tr>
                                                 <td>{{$cow->cow_id}}</td>
@@ -46,7 +46,7 @@
                                                 <td>{{$cow->gender}}</td>
                                                 <td>{{$cow->breed}}</td>
                                                 <td>
-                                                    <a href="#"><i class="fa fa-edit"></i> </a>
+                                                <a href="{{URL::to('cow/edit/' .$cow->cow_id)}}"><i class="fa fa-edit"></i> </a>
                                                     <a href="{{URL:: to('cow/delete/'.$cow->cow_id)}}"><i class="fa fa-trash"></i> </a>
                                                 </td>
                                             </tr>

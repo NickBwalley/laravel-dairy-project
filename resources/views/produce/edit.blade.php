@@ -1,5 +1,5 @@
 @extends('layout.layout')
-@section('page_title','Cows - ')
+@section('page_title','Produce - ')
 @section('content')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -8,7 +8,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Add Cow</h1>
+                        <h1 class="m-0">Edit Produce</h1>
                     </div><!-- /.col -->
 
                 </div><!-- /.row -->
@@ -28,31 +28,34 @@
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            <form>
+                            <form name="produce_add" id = "produce_add" method = "POST" action="/produce/edit">
+                            @csrf
+                            <div class="card-body">
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif 
+                        
                                 <div class="card-body">
+                                    <input type="hidden" name="id" value={{$data['produce_id']}}>
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Name</label>
-                                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                                        <label for="produce_name">Amount</label>
+                                        <input required type="text" class="form-control" value={{$data['amount']}} name="amount" id="amount" placeholder="Enter Produce Amount">
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Select</label>
-                                        <select class="form-control">
-                                            <option>option 1</option>
-                                            <option>option 2</option>
-                                            <option>option 3</option>
-                                            <option>option 4</option>
-                                            <option>option 5</option>
-                                        </select>
+                                        <label for="role_desc">ProduceDate</label>
+                                        <input required type="text" class="form-control" value={{$data['produce_date']}} name="produce_date" id="produce_name" placeholder="Enter Date">
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Email address</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                                        <label for="role_desc">UserID</label>
+                                        <input required type="text" class="form-control" value={{$data['user_id']}} name="user_id" id="user_id" placeholder="Enter UserID">
                                     </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputPassword1">Password</label>
-                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                    </div>
-                                </div>
+                                   
                                 <!-- /.card-body -->
 
                                 <div class="card-footer">

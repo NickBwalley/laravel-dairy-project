@@ -28,24 +28,28 @@
                                 <table class="table table-bordered">
                                     <thead>
                                     <tr>
+                                    
                                         <th style="width: 10px">#</th>
-                                        <th>h1</th>
-                                        <th>h2</th>
-                                        <th>h3</th>
+                                        <th>Amount</th>
+                                        <th>Produce Date</th>
+                                        <th>UserId</th>
                                         <th style="width: 15px">Actions</th>
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    @foreach($produce as $produce)    
                                         <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td>{{$produce->produce_id}}</td>
+                                            <td>{{$produce->amount}}</td>
+                                            <td>{{$produce->produce_date}}</td>
+                                            <td>{{$produce->user_id}}</td>
+                                            
                                             <td>
-                                                <a href="#"><i class="fa fa-edit"></i> </a>
-                                                <a href="#"><i class="fa fa-trash"></i> </a>
+                                            <a href="{{URL::to('produce/edit/' .$produce->produce_id)}}"><i class="fa fa-edit"></i> </a>
+                                                <a href="{{URL:: to('produce/delete/'.$produce->produce_id)}}"><i class="fa fa-trash"></i> </a>
                                             </td>
                                         </tr>
+                                        @endforeach
 
                                     </tbody>
                                 </table>

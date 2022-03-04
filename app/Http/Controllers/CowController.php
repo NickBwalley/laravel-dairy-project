@@ -14,12 +14,29 @@ class CowController extends Controller
         //show the view. 
         // passing the data to the view. 
         return view('cows.all', [
-            'cows' => $cows
+            'cow' => $cows
         ]);
     }
 
     public function add(){
         return view('cows.add');
+    }
+
+    public function edit($id){
+
+        $data = Cow::find($id);
+        return view('cows.edit', ['data'=>$data]);
+    } 
+
+    public function update(Request $request){
+        $data = Cow::find($request->id);
+        $data->name = $request->name;
+        $data->birth_date = $request->birth_date;
+        $data->gender = $request->gender;
+        $data->breed = $request->breed;
+        $data->save();
+        
+        return redirect('cows');
     }
 
     public function save(Request $request){
