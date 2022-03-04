@@ -70,7 +70,7 @@ class CowController extends Controller
         return redirect('cows');
     }
 
-    public function textSMS(){
+    public function testSMS(){
         $this->sendSMS('0714394332', 'Mata Dairy', 'Bamboochah!');
     }
     public static function sendSMS($to, $from, $msg){
