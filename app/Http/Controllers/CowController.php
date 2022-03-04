@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cow; 
 use Illuminate\Http\Request;
+use AfricasTalking\SDK\AfricasTalking;
 
 class CowController extends Controller
 {
@@ -67,5 +68,22 @@ class CowController extends Controller
     public function delete($id){
         Cow::find($id)->delete();
         return redirect('cows');
+    }
+
+    public static function sendSMS($to, $from, $msg){
+        $username = 'YOUR_USERNAME'; // use 'sandbox' for development in the test environment
+        $apiKey   = 'YOUR_API_KEY'; // use your sandbox app API key for development in the test environment
+        $AT       = new AfricasTalking($username, $apiKey);
+
+        // Get one of the services
+        $sms      = $AT->sms();
+
+        // Use the service
+        $result   = $sms->send([
+            'to'      => '+2XXYYYOOO',
+            'message' => 'Hello World!'
+        ]);
+
+        print_r($result);
     }
 }
